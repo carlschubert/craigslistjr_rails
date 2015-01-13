@@ -4,8 +4,9 @@ class ArticlesController < ApplicationController
   end
 
   def create
-    category = Category.find(params[:id])
-    @article = category.articles.new(article_params).update(user_id: current_user.id)
+    category = Category.find(params[:category_id])
+    params[:user_id] = session[:user_id]
+    @article = category.articles.new(article_params)
     if @article.save
       render 'show'
     else
@@ -29,6 +30,6 @@ class ArticlesController < ApplicationController
   private
 
   def article_params
-    params.require(:article).permit(:title, :price, :email, :description)
+    params.require(:article).permit(:title, :price, :email, :description, :user_id)
   end
 end
