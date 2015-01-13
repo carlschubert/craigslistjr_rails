@@ -5,7 +5,7 @@ class ArticlesController < ApplicationController
 
   def create
     category = Category.find(params[:category_id])
-    params[:user_id] = session[:user_id]
+    params[:article][:user_id] = session[:user_id]
     @article = category.articles.new(article_params)
     if @article.save
       render 'show'
