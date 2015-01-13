@@ -8,7 +8,7 @@ class ArticlesController < ApplicationController
     params[:article][:user_id] = session[:user_id]
     @article = category.articles.new(article_params)
     if @article.save
-      render 'show'
+      redirect_to category_path(params[:category_id])
     else
       render 'new'
     end
