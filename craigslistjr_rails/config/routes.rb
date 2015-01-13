@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   resources :users, :except => [:show, :index, :destroy]
   resources :sessions, :only => [:create]
+  resources :categories, :only => [:show, :index]
   get '/login' => 'sessions#login'
   post '/logout' => 'sessions#logout'
 
