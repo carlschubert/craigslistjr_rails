@@ -1,11 +1,15 @@
-<%=  form_for(:article, url: category_articles_path) do |f|  %>
-  <%= f.label :title %><br>
-  <%= f.text_field :title %><br>
-  <%= f.label :description %><br>
-  <%= f.text_field :description %><br>
-  <%= f.label :price %><br>
-  <%= f.text_field :price %><br>
-  <%= f.label :email %><br>
-  <%= f.text_field :email %><br>
-  <%= f.submit 'Post' %>
+<% if current_user %>
+  <%=  form_for(:article, url: category_articles_path) do |f|  %>
+    <%= f.label :title %><br>
+    <%= f.text_field :title %><br>
+    <%= f.label :description %><br>
+    <%= f.text_field :description %><br>
+    <%= f.label :price %><br>
+    <%= f.text_field :price %><br>
+    <%= f.label :email %><br>
+    <%= f.text_field :email %><br>
+    <%= f.submit 'Post' %>
+  <% end %>
+<% else %>
+  <h2>Please login!</h2>
 <% end %>
