@@ -4,4 +4,6 @@
   <% end %>
 </ul>
 
-<%= link_to 'Add posting', new_category_article_path(@category) %>
+<% if current_user %>
+  <%= link_to 'Add posting', new_category_article_path(@category) %>
+<% end %>
