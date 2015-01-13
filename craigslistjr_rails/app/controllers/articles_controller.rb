@@ -15,6 +15,7 @@ class ArticlesController < ApplicationController
   end
 
   def show
+    @category = Category.find(params[:category_id])
     @article = Article.find(params[:id])
   end
 
@@ -25,6 +26,9 @@ class ArticlesController < ApplicationController
   end
 
   def destroy
+    article = Article.find(params[:id])
+    article.destroy
+    redirect_to category_path(params[:category_id])
   end
 
   private
