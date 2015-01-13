@@ -4,6 +4,13 @@ class ArticlesController < ApplicationController
   end
 
   def create
+    category = Category.find(params[:id])
+    @article = category.articles.new(article_params).update(user_id: current_user.id)
+    if @article.save
+      render 'show'
+    else
+      render 'new'
+    end
   end
 
   def show
@@ -19,4 +26,9 @@ class ArticlesController < ApplicationController
   def destroy
   end
 
+  private
+
+  def article_params
+    params.require(:article).permit(:title, :price, :email, :description)
+  end
 end
