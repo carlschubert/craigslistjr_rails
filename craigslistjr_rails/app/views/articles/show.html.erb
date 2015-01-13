@@ -2,6 +2,7 @@
 <h4>Email me at: <%= @article.email %></h4>
 <p><%= @article.description %></p>
 
-<% if current_user %>
+<% if current_user && @article.user == current_user %>
+  <%= link_to 'Edit posting',category_article_path(@category, @article), :method => :put %>
   <%= link_to 'Delete posting',category_article_path(@category, @article), :method => :delete %>
 <% end %>
