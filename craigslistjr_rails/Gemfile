@@ -54,5 +54,7 @@ group :development, :test do
   gem 'capybara'
 
   gem 'shoulda-matchers'
+
+  gem 'valid_attribute'
 end
 
