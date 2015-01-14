@@ -13,4 +13,16 @@ feature "User signs in with an account", %q{
 
   let(:user) { FactoryGirl.create(:user) }
 
+  def sign_in_as(user)
+    visit login_path
+    fill_in "User name", with: user.user_name
+    fill_in "Password", with: user.password
+    click_button "Login"
+  end
+
+  scenario 'with existing account and valid input' do
+    sign_in_as(user)
+    expect(page).to have_content 'Logout'
+  end
+
 end
