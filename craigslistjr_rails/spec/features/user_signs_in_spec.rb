@@ -11,5 +11,6 @@ feature "User signs in with an account", %q{
 # * User is prompted with errors for invalid inputs.
 # * User is signed in upon correct input.
 
+  let(:user) { FactoryGirl.create(:user) }
 
 end
