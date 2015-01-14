@@ -1,0 +1,12 @@
+<%=  form_for(@article) do |f|  %>
+
+  <%= f.label :title %><br>
+  <%= f.text_field :title, :placeholder => @article.title %><br>
+  <%= f.label :description %><br>
+  <%= f.text_field :description, :placeholder => @article.description %><br>
+  <%= f.label :price %><br>
+  <%= f.text_field :price, :placeholder => @article.price %><br>
+  <%= f.label :email %><br>
+  <%= f.text_field :email, :placeholder => @article.email %><br>
+  <%= f.submit 'Edit' %>
+<% end %>
