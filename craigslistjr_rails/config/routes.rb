@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   resources :categories, :only => [:show, :index] do
     resources :articles, :except => [:index]
   end
+  resources :articles, :only => [:update, :edit]
   get '/login' => 'sessions#login'
   get '/logout' => 'sessions#logout'
 
