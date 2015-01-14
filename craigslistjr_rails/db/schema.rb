@@ -19,10 +19,10 @@ ActiveRecord::Schema.define(version: 20150113171030) do
   create_table "articles", force: :cascade do |t|
     t.integer "category_id"
     t.integer "user_id"
-    t.string  "title"
-    t.text    "description"
-    t.integer "price"
-    t.string  "email"
+    t.string  "title",       null: false
+    t.text    "description", null: false
+    t.integer "price",       null: false
+    t.string  "email",       null: false
   end
 
   create_table "categories", force: :cascade do |t|
