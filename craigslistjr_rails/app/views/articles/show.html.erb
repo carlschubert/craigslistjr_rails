@@ -3,6 +3,6 @@
 <p><%= @article.description %></p>
 
 <% if current_user && @article.user == current_user %>
-  <%= link_to 'Edit posting',category_article_path(@category, @article), :method => :put %>
+  <%= link_to 'Edit posting',edit_category_article_path(@category, @article) %>
   <%= link_to 'Delete posting',category_article_path(@category, @article), :method => :delete %>
 <% end %>
