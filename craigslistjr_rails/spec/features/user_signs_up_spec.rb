@@ -14,9 +14,9 @@ feature "User signs up", %q{
 
   scenario 'with valid input' do
     visit new_user_path
-    fill_in "User name", :with: "puppyoverlord"
-    fill_in "Password", :with: "puppy4ever"
-    fill_in "Password confirmation", :with: "puppy4ever"
+    fill_in "User name", with: "puppyoverlord"
+    fill_in "Password", with: "puppy4ever"
+    fill_in "Password confirmation", with: "puppy4ever"
     click_button "Signup"
 
     expect(page).to have_content 'Logout'
@@ -24,7 +24,7 @@ feature "User signs up", %q{
 
   scenario 'with invalid input' do
     visit new_user_path
-    fill_in "User name", :with: "puppyoverlord"
+    fill_in "User name", with: "puppyoverlord"
     click_button "Signup"
 
     expect(page).to have_content "Password can't be blank"
