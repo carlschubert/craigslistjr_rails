@@ -15,4 +15,8 @@ describe Category do
     it { should validate_uniqueness_of(:title) }
   end
 
+  describe "Association Tests" do
+    it { should have_many(:articles).dependent(:destroy) }
+  end
+
 end
