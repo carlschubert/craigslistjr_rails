@@ -20,9 +20,16 @@ class ArticlesController < ApplicationController
   end
 
   def edit
+    @article = Article.find(params[:id])
   end
 
   def update
+    article = Article.find(params[:id])
+    if article.update(article_params)
+      redirect_to category_path(article[:category_id])
+    else
+      render 'edit'
+    end
   end
 
   def destroy
