@@ -20,5 +20,5 @@ end
   Article.create(title: Faker::Lorem.word, description: Faker::Lorem.sentence, price: rand(1..1000), email: Faker::Internet.email, category_id: rand(1..5), user_id: rand(1..2))
 end
 
-User.create(name: 'user', password: '123')
-User.create(name: 'peon', password: '123')
+User.create(user_name: 'user', password: '123')
+User.create(user_name: 'peon', password: '123')
