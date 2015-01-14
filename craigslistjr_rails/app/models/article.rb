@@ -4,6 +4,6 @@ class Article < ActiveRecord::Base
   validates :description, presence: true
   validates :email, presence: true
 
-  belongs_to :category
-  belongs_to :user
+  belongs_to :category, inverse_of: :articles
+  belongs_to :user, inverse_of: :articles
 end
