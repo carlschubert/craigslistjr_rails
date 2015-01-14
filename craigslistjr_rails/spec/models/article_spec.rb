@@ -27,4 +27,9 @@ describe Article do
     it { should_not have_valid(:price).when(*invalid_amount) }
   end
 
+  describe "Association Tests" do
+    it { should belong_to(:user) }
+    it { should belong_to(:category) }
+  end
+
 end
