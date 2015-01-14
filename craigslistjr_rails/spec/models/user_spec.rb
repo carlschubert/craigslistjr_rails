@@ -17,4 +17,8 @@ describe User do
     it { should_not have_valid(:password).when(*blanks) }
   end
 
+  describe "Association Tests" do
+    it { should have_many(:articles).dependent(:destroy) }
+  end
+
 end
