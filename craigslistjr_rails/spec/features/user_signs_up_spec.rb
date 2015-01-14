@@ -22,4 +22,12 @@ feature "User signs up", %q{
     expect(page).to have_content 'Logout'
   end
 
+  scenario 'with invalid input' do
+    visit new_user_path
+    fill_in "User name", :with: "puppyoverlord"
+    click_button "Signup"
+
+    expect(page).to have_content "Password can't be blank"
+  end
+
 end
